@@ -20,7 +20,7 @@ export default function Home({coinList}) {
   )
 }
 
-export const getStaticProps= async() => {
+export const getServerSideProps= async() => {
   let coinList
   try {
     const res = await fetch('https://api.coinstats.app/public/v1/coins?skip=0&limit=10', {
