@@ -22,9 +22,15 @@ const SecondBlock = ({ coin }) => {
   });
 
   const getSiteName = (url) => {
-    let domain = new URL(url);
+    let domain;
+    try {
+    domain = new URL(url);
     domain = domain.hostname;
     domain = domain.toString().replace('www.', '');
+    } catch (error) {
+      console.log(error)
+    }
+    
 
     return domain;
   };
@@ -223,7 +229,7 @@ const SecondBlock = ({ coin }) => {
                 Volume
               </Text>
               <Tooltip
-                label="A cryptocurrency's maximum supply is the total number of tokens that will ever be mined, and it is usually defined when the genesis block is created. Bitcoin's maximum supply is capped at 21 million, and although anything is possible, its strict protocol and code are built so that no more BTC can ever be mined."
+                label="Volume refers to how much - in monetary terms - a given cryptocurrency has traded over a period of time. Volume is important because it has such a significant impact on price from both an absolute and relative perspective."
                 fontSize="sm"
               >
                 <InfoIcon color={headlinesColor} boxSize={'15px'} ml={'8px'} />

@@ -1,4 +1,5 @@
 import { Box, Flex, useColorModeValue} from "@chakra-ui/react";
+import Script from "next/script";
 import CoinRanks from "../components/CoinRanks";
 
 export default function Home({coinList}) {
@@ -11,7 +12,7 @@ export default function Home({coinList}) {
 
   return (
     <>
-      <Flex mt={'4rem'} justifyContent={'center'}>
+      <Flex my={'4rem'} justifyContent={'center'}>
         <Box backgroundColor={TableColor} boxShadow={'2xl'} p={6} border={'1px solid #1a1a1a'} borderRadius={'10px'} maxW={'90%'}>
           <CoinRanks coinList={coinList}/>
           </Box>
