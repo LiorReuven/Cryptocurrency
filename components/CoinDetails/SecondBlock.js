@@ -37,7 +37,7 @@ const SecondBlock = ({ coin }) => {
 
   const blockColor = useColorModeValue('gray.200', 'gray.900');
   const mainColorsRev = useColorModeValue('black', 'gray.50');
-  const headlinesColor = useColorModeValue('blackAlpha', 'gray.400');
+  const headlinesColor = useColorModeValue('gray.600', 'gray.400');
 
   return (
     <Flex

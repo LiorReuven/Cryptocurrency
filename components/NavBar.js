@@ -38,15 +38,15 @@ const NavBar = () => {
         justifyContent="space-between"
         alignItems={'center'}
       >
-        <Heading>Crypto<Text color={'orange'} as={'span'}>App</Text></Heading>
+        <Link href={'/'}><Heading>Crypto<Text color={'orange'} as={'span'}>App</Text></Heading></Link>
 
         <HStack spacing={'12px'}>
           <Button as={Link} href="/">
             Top 10
           </Button>
-          <Button as={Link} href="about">
+          {/* <Button as={Link} href="about">
             About
-          </Button>
+          </Button> */}
           <ColorModeToggle></ColorModeToggle>
         </HStack>
       </Flex>
@@ -129,51 +129,7 @@ function MobileNav({}) {
                 as={Link}
                 href="/"
               >
-                Home
-              </Button>
-              <Button
-                backgroundColor={buttonBackground}
-                w={'150px'}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                as={Link}
-                href="about"
-              >
-                About
-              </Button>
-              <Button
-                backgroundColor={buttonBackground}
-                w={'150px'}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                as={Link}
-                href="sample_projects"
-              >
-                Sample Projects
-              </Button>
-              <Button
-                backgroundColor={buttonBackground}
-                w={'150px'}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                as={Link}
-                href="main_projects"
-              >
-                Main Projects
-              </Button>
-              <Button
-                backgroundColor={buttonBackground}
-                w={'150px'}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                as={Link}
-                href="contact"
-              >
-                Contact
+                Top 10
               </Button>
             </VStack>
           </Flex>

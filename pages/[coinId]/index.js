@@ -1,20 +1,19 @@
-import { Flex, useColorModeValue } from '@chakra-ui/react';
+import { Flex} from '@chakra-ui/react';
 import Script from 'next/script';
 import React from 'react';
 import FirstBlock from '../../components/CoinDetails/FirstBlock';
-import FourthBlock from '../../components/CoinDetails/fourthBlock';
+import FourthBlock from '../../components/CoinDetails/FourthBlock';
 import SecondBlock from '../../components/CoinDetails/SecondBlock';
 import ThirdBlock from '../../components/CoinDetails/ThirdBlock';
 
 const CoinDetails = ({ coin, coinDescription }) => {
 
-  const blockColor = useColorModeValue('gray.200', 'gray.900');
-  const mainColors = useColorModeValue('gray.50', 'blackAlpha.700');
 
   return (
     <>
       <Script
         src="https://static.coinstats.app/widgets/coin-chart-widget.js"
+        strategy='beforeInteractive'
         async
       />
 

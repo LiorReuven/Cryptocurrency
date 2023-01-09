@@ -1,5 +1,4 @@
 import { Box, Flex, useColorModeValue} from "@chakra-ui/react";
-import Script from "next/script";
 import CoinRanks from "../components/CoinRanks";
 
 export default function Home({coinList}) {
