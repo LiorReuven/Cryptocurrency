@@ -169,7 +169,7 @@ const SecondBlock = ({ coin }) => {
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
               {coin.marketCap > 1000000000
-                ? `$${Math.round(coin.marketCap / 1000000000)} B`
+                ? `$${Math.round(coin.marketCap / 1000000000)}B`
                 : formatter.format(coin.marketCap)}
             </Text>
           </Flex>
@@ -191,7 +191,7 @@ const SecondBlock = ({ coin }) => {
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
             {coin.totalSupply > 1000000000
-                ? `$${Math.round(coin.totalSupply / 1000000000)} B`
+                ? `$${Math.round(coin.totalSupply / 1000000000)}B`
                 : formatter.format(coin.totalSupply)}
             </Text>
           </Flex>
@@ -215,7 +215,7 @@ const SecondBlock = ({ coin }) => {
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
               {(coin.availableSupply > 1000000000)
-                ? `$${Math.round(coin.availableSupply / 1000000000)} B`
+                ? `$${Math.round(coin.availableSupply / 1000000000)}B`
                 : formatter.format(coin.availableSupply)}
             </Text>
           </Flex>
@@ -237,7 +237,7 @@ const SecondBlock = ({ coin }) => {
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
             {(coin.volume > 1000000000)
-                ? `$${Math.round(coin.volume / 1000000000)} B`
+                ? `$${Math.round(coin.volume / 1000000000)}B`
                 : formatter.format(coin.volume)}
             </Text>
           </Flex>
