@@ -18,9 +18,6 @@ import Link from 'next/link';
 const NavBar = () => {
   const colorModeValue = useColorModeValue('#edeeee', '#1b202c');
 
- 
-
-
   let activeStyle = {
     background: '#417fcc',
     borderRadius: '5px',
@@ -38,7 +35,14 @@ const NavBar = () => {
         justifyContent="space-between"
         alignItems={'center'}
       >
-        <Link href={'/'}><Heading>Crypto<Text color={'orange'} as={'span'}>App</Text></Heading></Link>
+        <Link href={'/'}>
+          <Heading>
+            Crypto
+            <Text color={'orange'} as={'span'}>
+              App
+            </Text>
+          </Heading>
+        </Link>
 
         <HStack spacing={'12px'}>
           <Button as={Link} href="/">
@@ -74,8 +78,6 @@ function MobileNav({}) {
   const [isOpen, setIsOpen] = useState(false);
   const buttonBackground = useColorModeValue('gray.300', 'whiteAlpha.200');
   const mainColors = useColorModeValue('gray.50', 'blackAlpha.700');
-
-
 
   return (
     <>

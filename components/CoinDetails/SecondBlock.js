@@ -24,13 +24,12 @@ const SecondBlock = ({ coin }) => {
   const getSiteName = (url) => {
     let domain;
     try {
-    domain = new URL(url);
-    domain = domain.hostname;
-    domain = domain.toString().replace('www.', '');
+      domain = new URL(url);
+      domain = domain.hostname;
+      domain = domain.toString().replace('www.', '');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    
 
     return domain;
   };
@@ -149,8 +148,16 @@ const SecondBlock = ({ coin }) => {
           </Flex>
         </Stack>
       </Flex>
-      <Flex direction={{ base: 'column', md: 'row' }} p={2} justifyContent={'space-evenly'}>
-        <Flex mr={{md:'15px',base:'0'}} direction={'column'} justifyContent={'space-between'} >
+      <Flex
+        direction={{ base: 'column', md: 'row' }}
+        p={2}
+        justifyContent={'space-evenly'}
+      >
+        <Flex
+          mr={{ md: '15px', base: '0' }}
+          direction={'column'}
+          justifyContent={'space-between'}
+        >
           <Flex direction={'column'}>
             <Flex align={'center'} justifyContent={'center'}>
               <Text
@@ -173,7 +180,7 @@ const SecondBlock = ({ coin }) => {
                 : formatter.format(coin.marketCap)}
             </Text>
           </Flex>
-          <Flex direction={'column'} >
+          <Flex direction={'column'}>
             <Flex align={'center'} justifyContent={'center'}>
               <Text
                 color={headlinesColor}
@@ -190,15 +197,15 @@ const SecondBlock = ({ coin }) => {
               </Tooltip>
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
-            {coin.totalSupply > 1000000000
+              {coin.totalSupply > 1000000000
                 ? `$${Math.round(coin.totalSupply / 1000000000)}B`
                 : formatter.format(coin.totalSupply)}
             </Text>
           </Flex>
         </Flex>
-        <Flex  direction={'column'} justifyContent={'space-between'} >
+        <Flex direction={'column'} justifyContent={'space-between'}>
           <Flex direction={'column'}>
-            <Flex align={'center'} >
+            <Flex align={'center'}>
               <Text
                 color={headlinesColor}
                 fontWeight={'semibold'}
@@ -214,12 +221,12 @@ const SecondBlock = ({ coin }) => {
               </Tooltip>
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
-              {(coin.availableSupply > 1000000000)
+              {coin.availableSupply > 1000000000
                 ? `$${Math.round(coin.availableSupply / 1000000000)}B`
                 : formatter.format(coin.availableSupply)}
             </Text>
           </Flex>
-          <Flex direction={'column'} >
+          <Flex direction={'column'}>
             <Flex align={'center'} justifyContent={'center'}>
               <Text
                 color={headlinesColor}
@@ -236,7 +243,7 @@ const SecondBlock = ({ coin }) => {
               </Tooltip>
             </Flex>
             <Text fontWeight={'semibold'} fontSize={'lg'} textAlign={'center'}>
-            {(coin.volume > 1000000000)
+              {coin.volume > 1000000000
                 ? `$${Math.round(coin.volume / 1000000000)}B`
                 : formatter.format(coin.volume)}
             </Text>

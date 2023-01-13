@@ -2,12 +2,11 @@ import { Flex, useColorModeValue } from '@chakra-ui/react';
 import Script from 'next/script';
 import React, { useState } from 'react';
 
-const ThirdBlock = ({coin}) => {
+const ThirdBlock = ({ coin }) => {
   const blockColor = useColorModeValue('gray.200', 'gray.900');
 
   return (
     <>
- 
       <Flex
         w={{ base: '100%', md: '100%' }}
         borderRadius={'10px'}
@@ -23,7 +22,7 @@ const ThirdBlock = ({coin}) => {
           chart-height="300"
           currency="USD"
           locale="en"
-          bg-color='black'
+          bg-color="black"
           text-color="#FFFFFF"
           status-up-color="#74D492"
           status-down-color="#FE4747"

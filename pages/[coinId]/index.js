@@ -1,4 +1,4 @@
-import { Flex} from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Script from 'next/script';
 import React from 'react';
 import FirstBlock from '../../components/CoinDetails/FirstBlock';
@@ -7,13 +7,11 @@ import SecondBlock from '../../components/CoinDetails/SecondBlock';
 import ThirdBlock from '../../components/CoinDetails/ThirdBlock';
 
 const CoinDetails = ({ coin, coinDescription }) => {
-
-
   return (
     <>
       <Script
         src="https://static.coinstats.app/widgets/coin-chart-widget.js"
-        strategy='beforeInteractive'
+        strategy="beforeInteractive"
         async
       />
 
@@ -41,34 +39,30 @@ export const getServerSideProps = async (context) => {
   try {
     const [coinRes, coinDescriptionRes] = await Promise.all([
       fetch(
-        `https://api.coinstats.app/public/v1/coins/${context.params.coinId}?currency=USD`,
+        `${process.env.API}/coins/${context.params.coinId}?currency=USD`,
         {
           method: 'GET',
           redirect: 'follow',
         }
-      ), 
-      fetch(
-        `https://api.coingecko.com/api/v3/coins/${context.params.coinId}`,
-        {
-          method: 'GET',
-          redirect: 'follow',
-        }
-      )
+      ),
+      fetch(`${process.env.API2}/coins/${(context.params.coinId === 'binance-coin') ? 'binancecoin' : context.params.coinId}`, {
+        method: 'GET',
+        redirect: 'follow',
+      }),
     ]);
-    
-    const [coinJs, coinDesc] = await Promise.all([
-      coinRes.json(), 
-      coinDescriptionRes.json()
-    ]);
-    
 
-    coinDescription = coinDesc.description.en
-    coin = coinJs.coin
+    const [coinJs, coinDesc] = await Promise.all([
+      coinRes.json(),
+      coinDescriptionRes.json(),
+    ]);
+
+    coinDescription = coinDesc.description.en;
+    coin = coinJs.coin;
   } catch (error) {
     console.log(error);
   }
 
   return {
-    props: {coin:coin,coinDescription:coinDescription}
+    props: { coin: coin, coinDescription: coinDescription },
   };
 };

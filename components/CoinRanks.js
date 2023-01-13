@@ -16,7 +16,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-
 const CoinRanks = ({ coinList }) => {
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -26,7 +25,6 @@ const CoinRanks = ({ coinList }) => {
   const hoverColor = useColorModeValue('gray.100', 'gray.800');
 
   const statColor = useColorModeValue('black', 'white');
-
 
   return (
     <TableContainer>
@@ -45,100 +43,94 @@ const CoinRanks = ({ coinList }) => {
             const numberCheck = Math.sign(coin.priceChange1d);
             const numberCheck1w = Math.sign(coin.priceChange1w);
             const onRowClick = () => {
-              const domain = window.location.href
-              console.log(domain)
-              window.location.assign(`${domain}/${coin.id}`)
+              const domain = window.location.href;
+              console.log(domain);
+              window.location.assign(`${domain}/${coin.id}`);
             };
             return (
-              
-                <Tr
-                  key={coin.id}
-                  cursor={'pointer'}
-                  _hover={{ backgroundColor: hoverColor }}
-                  onClick={onRowClick}
-                >
-                  <Td>{coin.rank}</Td>
-                  <Td>
-                    <Stack
-                      align={'center'}
-                      direction={'row'}
-                      pr={{ md: 40, base: 0 }}
+              <Tr
+                key={coin.id}
+                cursor={'pointer'}
+                _hover={{ backgroundColor: hoverColor }}
+                onClick={onRowClick}
+              >
+                <Td>{coin.rank}</Td>
+                <Td>
+                  <Stack
+                    align={'center'}
+                    direction={'row'}
+                    pr={{ md: 40, base: 0 }}
+                  >
+                    <Image boxSize={8} objectFit={'contain'} src={coin.icon} />
+                    <Text as={'span'}>{coin.name}</Text>
+                    <Text color={'gray.500'} as={'span'}>
+                      •
+                    </Text>
+                    <Text color={'gray.500'} as={'span'}>
+                      {coin.symbol}
+                    </Text>
+                  </Stack>
+                </Td>
+                <Td isNumeric fontWeight={'semibold'}>
+                  {formatter.format(coin.price)}
+                </Td>
+                <Td isNumeric>
+                  <Stat>
+                    <StatHelpText
+                      fontWeight={'semibold'}
+                      color={
+                        numberCheck === 1
+                          ? '#16c784'
+                          : numberCheck === -1
+                          ? 'red'
+                          : statColor
+                      }
                     >
-                      <Image
-                        boxSize={8}
-                        objectFit={'contain'}
-                        src={coin.icon}
-                      />
-                      <Text as={'span'}>{coin.name}</Text>
-                      <Text color={'gray.500'} as={'span'}>
-                        •
-                      </Text>
-                      <Text color={'gray.500'} as={'span'}>
-                        {coin.symbol}
-                      </Text>
-                    </Stack>
-                  </Td>
-                  <Td isNumeric fontWeight={'semibold'}>
-                    {formatter.format(coin.price)}
-                  </Td>
-                  <Td isNumeric>
-                    <Stat>
-                      <StatHelpText
-                        fontWeight={'semibold'}
-                        color={
-                          numberCheck === 1
-                            ? '#16c784'
-                            : numberCheck === -1
-                            ? 'red'
-                            : statColor
-                        }
-                      >
-                        {(numberCheck === 1 || numberCheck === -1) && (
-                          <StatArrow
-                            color={numberCheck === 1 && '#16c784'}
-                            type={
-                              numberCheck === 1
-                                ? 'increase'
-                                : numberCheck === -1
-                                ? 'decrease'
-                                : ''
-                            }
-                          />
-                        )}
-                        {coin.priceChange1d}%
-                      </StatHelpText>
-                    </Stat>
-                  </Td>
-                  <Td isNumeric>
-                    <Stat>
-                      <StatHelpText
-                        fontWeight={'semibold'}
-                        color={
-                          numberCheck1w === 1
-                            ? '#16c784'
-                            : numberCheck1w === -1
-                            ? 'red'
-                            : statColor
-                        }
-                      >
-                        {(numberCheck1w === 1 || numberCheck1w === -1) && (
-                          <StatArrow
-                            color={numberCheck1w === 1 && '#16c784'}
-                            type={
-                              numberCheck1w === 1
-                                ? 'increase'
-                                : numberCheck1w === -1
-                                ? 'decrease'
-                                : ''
-                            }
-                          />
-                        )}
-                        {coin.priceChange1w}%
-                      </StatHelpText>
-                    </Stat>
-                  </Td>
-                </Tr>
-              
+                      {(numberCheck === 1 || numberCheck === -1) && (
+                        <StatArrow
+                          color={numberCheck === 1 && '#16c784'}
+                          type={
+                            numberCheck === 1
+                              ? 'increase'
+                              : numberCheck === -1
+                              ? 'decrease'
+                              : ''
+                          }
+                        />
+                      )}
+                      {coin.priceChange1d}%
+                    </StatHelpText>
+                  </Stat>
+                </Td>
+                <Td isNumeric>
+                  <Stat>
+                    <StatHelpText
+                      fontWeight={'semibold'}
+                      color={
+                        numberCheck1w === 1
+                          ? '#16c784'
+                          : numberCheck1w === -1
+                          ? 'red'
+                          : statColor
+                      }
+                    >
+                      {(numberCheck1w === 1 || numberCheck1w === -1) && (
+                        <StatArrow
+                          color={numberCheck1w === 1 && '#16c784'}
+                          type={
+                            numberCheck1w === 1
+                              ? 'increase'
+                              : numberCheck1w === -1
+                              ? 'decrease'
+                              : ''
+                          }
+                        />
+                      )}
+                      {coin.priceChange1w}%
+                    </StatHelpText>
+                  </Stat>
+                </Td>
+              </Tr>
             );
           })}
         </Tbody>
