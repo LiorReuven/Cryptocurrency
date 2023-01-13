@@ -10,6 +10,7 @@ Demo: [Live Demo]('')
 - Utilization of pre-render functionality of nextjs  
 - External API calls
 - Chakra-UI
+- Light/Dark Mode
 - Mobile support
 
 ## Images
