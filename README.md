@@ -8,6 +8,7 @@ Demo: [Live Demo]('')
 - Top 10 coin page 
 - Details page for a specific coin
 - Utilization of pre-render functionality of nextjs  
+- External API calls
 - Chakra-UI
 - Mobile support
 
