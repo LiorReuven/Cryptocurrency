@@ -20,7 +20,8 @@ Demo: [Live Demo]('')
 ![cryptoimage2](https://user-images.githubusercontent.com/103745653/212407118-291a3cb8-e484-42fd-b2b3-18ad2dd30e1a.JPG)
 ### Coin details Page:
 ![cryptoimagee](https://user-images.githubusercontent.com/103745653/212407129-649fe367-5784-4e39-9188-c837d06fb3a6.JPG)
-
+### Mobile Support:
+![Mobilesupport](https://user-images.githubusercontent.com/103745653/212426319-840b36ab-7e8b-42d3-9d41-407da044c22d.JPG)
 
 
 
