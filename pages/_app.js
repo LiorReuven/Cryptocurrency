@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 
 export default function App({ Component, pageProps }) {
+  if (process.env.NODE_ENV === "production")
+  console.log = function no_console() {};
   return (
     <>
       <Head>
