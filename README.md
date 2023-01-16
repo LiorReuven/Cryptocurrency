@@ -1,7 +1,7 @@
 # CryptoApp - Made with NextJs
 Website created to provide Cryptocurrency information and statistics
 
-Demo: [Live Demo]('') 
+Demo: [Live Demo]('https://crypto-app-one-ruddy.vercel.app/') 
 
 ## Features
 
